@@ -22,3 +22,23 @@ int numero2 = int.Parse(input2);
 double divisione = (double)numero1 /numero2;
 Console.WriteLine($"Risultato della divisione: {divisione:F2}");
 
+/*Esercizio 3: Classificazione di un numero
+Leggi un numero intero da tastiera e stampa se è positivo, negativo o zero. 
+Usa una struttura if-else if-else.
+*/
+Console.WriteLine("Digita un numero");
+string input3 = Console.ReadLine()!;
+int numero3 = int.Parse(input3);
+if (numero3 > 0)
+{
+    Console.WriteLine($"Il numero {numero3} è positivo");
+}
+else if (numero3 < 0)
+{
+    Console.WriteLine($"Il numero {numero3} è negativo");
+}
+else
+{
+    Console.WriteLine("Il numero è 0");
+}
+
