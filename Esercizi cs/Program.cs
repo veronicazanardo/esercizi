@@ -118,3 +118,37 @@ while (i2 < numero6)
 }
 double media = (double)somma/numero6;
 Console.WriteLine($"La somma dei numeri è {somma}, mentre la media è {media}");
+
+/*Esercizio 7: Indovina il numero
+Il programma genera un numero casuale tra 1 e 100 con Random. 
+L'utente ha tentativi illimitati: ad ogni tentativo il programma risponde 'Troppo alto', 'Troppo basso' o 'Esatto!'. 
+Stampa infine il numero di tentativi impiegati.
+*/
+
+Random random = new();
+int numeroCasuale = random.Next(1, 101); //primo incluso secondo escluso
+int i3 = 0;
+
+Console.WriteLine("Indovina il numero! Scrivine uno: ");
+
+while(true)
+{
+    string input8 = Console.ReadLine()!;
+    int numero8 = int.Parse(input8);
+    
+    i3++;
+
+    if(numero8 < numeroCasuale)
+    {
+        Console.WriteLine("Troppo basso! Ritenta");
+    }
+    else if(numero8 > numeroCasuale)
+    {
+        Console.WriteLine("Troppo alto! Ritenta");
+    }
+    else
+    {
+        Console.WriteLine($"Esatto! Ci hai messo {i3} tentativi!");
+        break;
+    }
+}
