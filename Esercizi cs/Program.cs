@@ -3,6 +3,8 @@ Dichiara una variabile double per il raggio (valore a scelta).
 Calcola e stampa l'area del cerchio usando Math.PI. 
 Formatta il risultato con 2 cifre decimali */
 
+using System.Xml.Schema;
+
 double raggio = 10;
 double area = Math.Pow(raggio, 2)* Math.PI;
 Console.WriteLine($"L'area del cerchio è: {area:F2}");
@@ -135,7 +137,7 @@ while(true)
 {
     string input8 = Console.ReadLine()!;
     int numero8 = int.Parse(input8);
-    
+
     i3++;
 
     if(numero8 < numeroCasuale)
@@ -152,3 +154,35 @@ while(true)
         break;
     }
 }
+
+/*Esercizio 8: Minimo, massimo e media di un array
+Crea un array di 6 interi inseriti dall'utente. 
+Senza usare LINQ, trova e stampa il valore minimo, il massimo e la media dei valori.
+*/
+int[] array = new int[6];
+int somma2 = 0;
+for(int p = 0; p <6; p++)
+{
+    Console.WriteLine($"Inserisci il numero {p + 1}");
+    array[p] = int.Parse(Console.ReadLine()!);
+    somma2+= array[p];
+}
+double media2 = (double)somma2/6;
+
+int min = array[0];
+int max = array[0];
+
+foreach(int m in array)
+{
+    if (m < min)
+    {
+        min = m;
+    }
+    if (m > max)
+    {
+        max = m;
+    }
+}
+Console.WriteLine($"Il valore massimo è: {max}");
+Console.WriteLine($"Il valore minimo è: {min}");
+Console.WriteLine($"La media dei valori è: {media2}");
