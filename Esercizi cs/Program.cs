@@ -80,4 +80,19 @@ switch (numero4)
     default:
         Console.WriteLine("Valore non valido");
         break;
-}       
+}
+
+/*Esercizio 5: Tabellina con ciclo for
+Leggi un numero intero da tastiera e stampa la sua tabellina da 1 a 10 usando un ciclo for. 
+Ogni riga deve avere il formato: "N x i = risultato".
+*/
+
+Console.WriteLine("Inserisci un numero: ");
+string input5 = Console.ReadLine()!;
+int numero5 = int.Parse(input5);
+
+for (int i=1; i <= 10; i++)
+{
+    int moltiplicazione = numero5 * i;
+    Console.WriteLine($"{numero5} * {i} = {moltiplicazione}");
+}
