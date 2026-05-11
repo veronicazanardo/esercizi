@@ -96,3 +96,25 @@ for (int i=1; i <= 10; i++)
     int moltiplicazione = numero5 * i;
     Console.WriteLine($"{numero5} * {i} = {moltiplicazione}");
 }
+
+/* Esercizio 6: Somma di N numeri con while
+Chiedi all'utente quanti numeri vuole sommare (N). 
+Usa un ciclo while per leggere N numeri interi e stampare la loro somma e la media.
+*/
+
+Console.WriteLine("Quanti numeri vuoi sommare? ");
+string input6 = Console.ReadLine()!;
+int numero6 = int.Parse(input6);
+
+
+int i2 = 0;
+int somma = 0;
+while (i2 < numero6)
+{
+    Console.WriteLine("Inserisci il numero: ");
+    int numero7 = int.Parse(Console.ReadLine()!);
+    somma += numero7;
+    i2++;
+}
+double media = (double)somma/numero6;
+Console.WriteLine($"La somma dei numeri è {somma}, mentre la media è {media}");
