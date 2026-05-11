@@ -42,3 +42,42 @@ else
     Console.WriteLine("Il numero è 0");
 }
 
+
+/* Esercizio 4: Voto scolastico con switch
+Leggi un voto intero da 1 a 10.
+Usando switch, stampa il giudizio corrispondente:
+9-10 = Ottimo, 
+7-8 = Buono, 
+6 = Sufficiente, 
+1-5 = Insufficiente. 
+Gestisci anche valori fuori range.
+*/
+
+Console.WriteLine("Inserisci il voto numerico (da 1 a 10): ");
+string input4 = Console.ReadLine()!;
+int numero4 = int.Parse(input4);
+
+switch (numero4)
+{
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        Console.WriteLine("Insufficiente");
+        break;
+    case 6:
+        Console.WriteLine("Sufficiente");
+        break;
+    case 7:
+    case 8:
+        Console.WriteLine("Buono");
+        break;
+    case 9:
+    case 10:
+        Console.WriteLine("Ottimo");
+        break;
+    default:
+        Console.WriteLine("Valore non valido");
+        break;
+}       
