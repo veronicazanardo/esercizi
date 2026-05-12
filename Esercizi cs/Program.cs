@@ -295,3 +295,54 @@ class Persona
     }
 }
 
+
+/* Esercizio 13: Ereditarietà: Animale e sottoclassi
+Definisci una classe base Animale con la proprietà Nome e un metodo virtuale Parla(). 
+Crea due classi derivate, Cane e Gatto, che fanno override di Parla() stampando 
+rispettivamente 'Bau!' e 'Miao!'. 
+Crea un array di tipo Animale contenente istanze di entrambe le classi e 
+richiama Parla() su ognuna (polimorfismo).
+*/
+
+Animale[] animali = {new Cane("Bepis"), new Gatto("Gatto")};
+foreach (Animale v in animali)
+{
+    Console.WriteLine(v.Nome);
+    v.Parla();
+}
+
+class Animale
+{
+    public string Nome{get;set;}
+
+    public Animale(string nome)
+    {
+        Nome = nome;
+    }
+
+    public virtual void Parla() //virtual = può essere modificato dai figli, void stampa ma non returna
+    {
+        Console.WriteLine(" ");
+    }
+}
+
+class Cane : Animale
+{
+    public Cane(string nome) : base(nome){}
+
+    public override void Parla()
+    {
+        Console.WriteLine("Bau!");
+    }
+}
+
+class Gatto : Animale
+{
+    public Gatto(string nome) : base(nome){}
+
+    public override void Parla()
+    {
+        Console.WriteLine("Miao");
+    }
+}
+
