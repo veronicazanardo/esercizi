@@ -346,3 +346,29 @@ class Gatto : Animale
     }
 }
 
+/* Esercizio 14: Input sicuro da tastiera
+Scrivi un metodo int LeggiIntero(string messaggio) che mostra il messaggio, 
+legge l'input e lo converte in intero. 
+Se l'utente inserisce un valore non numerico, 
+cattura l'eccezione con try-catch e chiede di reinserire il valore,
+ripetendo finché l'input è valido.
+*/
+
+static int LeggiIntero(string messaggio)
+{
+    Console.WriteLine(messaggio);
+    while (true)
+    {
+        try
+        {
+            int numero10 = int.Parse(Console.ReadLine()!);
+            return numero10;
+        }
+        catch (FormatException) //formatException = int.Parse è sbagliato. Ogni tipo di errore ha il suo nome
+        {
+            Console.WriteLine("Non è un numero. Inserisci un numero");
+        }
+    }
+}
+int risultato4 = LeggiIntero("Inserisci il numero: ");
+Console.WriteLine("è un numero");
