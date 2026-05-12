@@ -186,3 +186,58 @@ foreach(int m in array)
 Console.WriteLine($"Il valore massimo è: {max}");
 Console.WriteLine($"Il valore minimo è: {min}");
 Console.WriteLine($"La media dei valori è: {media2}");
+
+/* Esercizio 9: Filtraggio con List e LINQ
+Crea una List<string> con almeno 6 nomi inseriti dall'utente.
+Usando LINQ (Where e OrderBy), stampa solo i nomi con più di 4 caratteri, ordinati alfabeticamente.
+*/
+var nomi = new List<string>();
+
+for(int q = 0; q <6; q++)
+{
+    Console.WriteLine($"Inserisci il nome {q + 1}");
+    nomi.Add(Console.ReadLine()!);
+}
+
+var risultato = nomi
+    .Where(q => q.Length > 4)
+    .OrderBy(q => q)
+    .ToList();
+
+foreach(string t in risultato)
+{
+    Console.WriteLine(t);
+}
+
+/* Esercizio 10: Numero primo
+Scrivi un metodo bool IsPrimo(int n) che restituisce true se n è un numero primo. 
+Nel Main, leggi un numero da tastiera e stampa se è primo o no.
+*/
+
+static bool IsPrimo(int z)
+{
+
+    if(z <= 1)
+    {
+        return false;
+    }
+
+    for(int w = 2; w <= Math.Sqrt(z); w++)
+    {
+        if(z%w == 0)
+        return false;
+    }
+
+    return true;
+}
+Console.WriteLine("Scrivi un numero e ti dico se è primo: ");
+int numero9 = int.Parse(Console.ReadLine()!);
+bool risultato2 = IsPrimo(numero9);
+if (risultato2 == true)
+{
+    Console.WriteLine("è primo");
+}
+else
+{
+    Console.WriteLine("Non è primo");
+}
