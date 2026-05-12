@@ -241,3 +241,22 @@ else
 {
     Console.WriteLine("Non è primo");
 }
+
+/* Esercizio 11: Fattoriale ricorsivo
+Scrivi un metodo ricorsivo long Fattoriale(int n) che calcola il fattoriale di n. 
+Gestisci il caso base (n <= 1) e testa il metodo con valori inseriti dall'utente.
+*/
+
+static long Fattoriale(int x)
+{
+    if (x <= 1)
+        return 1;
+
+    return x * Fattoriale(x -1);
+}
+
+Console.WriteLine("Scrivi un numero e ti dico il fattoriale: ");
+int c = int.Parse(Console.ReadLine()!);
+long risposta3 = Fattoriale(c);
+Console.WriteLine($"Il fattoriale di {c} è {risposta3}");
+
