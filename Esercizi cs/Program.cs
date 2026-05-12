@@ -3,6 +3,7 @@ Dichiara una variabile double per il raggio (valore a scelta).
 Calcola e stampa l'area del cerchio usando Math.PI. 
 Formatta il risultato con 2 cifre decimali */
 
+using System.Security.Cryptography.X509Certificates;
 using System.Xml.Schema;
 
 double raggio = 10;
@@ -372,3 +373,54 @@ static int LeggiIntero(string messaggio)
 }
 int risultato4 = LeggiIntero("Inserisci il numero: ");
 Console.WriteLine("è un numero");
+
+/* Esercizio 15: Interfaccia IFigura
+Definisci un'interfaccia IFigura con i metodi double Area() e double Perimetro(). 
+Implementala in due classi: Rettangolo (base e altezza) e Cerchio (raggio). 
+Nel Main, crea una lista List<IFigura>, aggiungici oggetti di entrambi i tipi 
+e stampa area e perimetro di ciascuno.
+*/
+
+var Figure = new List<IFigura>();
+Figure.Add(new Rettangolo(5, 9));
+Figure.Add(new Cerchio(5));
+
+foreach(IFigura fi in Figure)
+{
+    Console.WriteLine(fi.Area());
+    Console.WriteLine(fi.Perimetro());
+}
+
+interface IFigura
+{
+    double Area();
+    double Perimetro();
+}
+
+class Rettangolo : IFigura
+{
+    public double Larghezza {get; set;}
+    public double Altezza {get; set;}
+
+    public Rettangolo (double larghezza, double altezza)
+    {
+        Larghezza = larghezza;
+        Altezza = altezza;
+    }
+
+    public double Area() => Larghezza * Altezza; // => = return 
+    public double Perimetro() => 2*(Larghezza+Altezza);
+
+}
+
+class Cerchio : IFigura
+{
+    public double Raggio {get; set;}
+
+    public Cerchio(double raggio)
+    {
+        Raggio = raggio;
+    }
+    public double Area() => Math.PI*Raggio*Raggio;
+    public double Perimetro() => 2*Math.PI*Raggio;
+}
