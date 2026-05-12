@@ -260,3 +260,38 @@ int c = int.Parse(Console.ReadLine()!);
 long risposta3 = Fattoriale(c);
 Console.WriteLine($"Il fattoriale di {c} è {risposta3}");
 
+/* Esercizio 12: Classe Persona
+Crea una classe Persona con le proprietà Nome, Cognome ed Eta (con get e set). 
+Aggiungi un costruttore parametrizzato, un metodo IsAdult() che restituisce 
+true se l'età è >= 18, 
+e override di ToString() che restituisce nome completo ed età. 
+Crea almeno 2 istanze e stampale.
+*/
+var persona1 = new Persona("Salvatore", "Wewe", 45);
+Console.WriteLine(persona1);
+Console.WriteLine(persona1.IsAdult());
+
+var persona2 = new Persona ("Dfhka", "Papsee", 14);
+Console.WriteLine(persona2);
+Console.WriteLine(persona2.IsAdult());
+
+class Persona
+{
+    public string Nome {get;set;}
+    public string Cognome {get;set;}
+    public int Eta {get;set;}
+
+    public Persona(string nome, string cognome, int eta)
+    {
+        Nome = nome;
+        Cognome = cognome;
+        Eta = eta;
+    }
+    public bool IsAdult() => Eta >= 18;
+
+    public override string ToString()
+    {
+        return $"{Nome}, {Cognome}, {Eta}";
+    }
+}
+
